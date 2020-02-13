@@ -1,0 +1,16 @@
+
+<%= render 'shared/banner' %>
+
+<div class="container my-4">
+  <div class="row d-flex justify-content-between">
+    <h2>New cocktail</h2>
+  </div>
+
+  <div class="row list-group">
+    <%= simple_form_for [ @cocktail ] do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Add ingredients", class: "btn btn-secondary" %>
+      <%= f.submit "Submit without ingredients", class: "btn btn-secondary" %>
+    <% end %>
+  </div>
+</div>

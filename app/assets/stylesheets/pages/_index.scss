@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.btn > a {
+  color: white;
+}
+
+.btn > a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}
