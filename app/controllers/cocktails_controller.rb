@@ -19,7 +19,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
       if params[:commit] == 'Submit without ingredients'
-        redirect_to cocktails_path
+        redirect_to root_path
       elsif params[:commit] == 'Add ingredients'
         redirect_to cocktail_path(@cocktail)
       end
@@ -31,7 +31,7 @@ class CocktailsController < ApplicationController
   def destroy
     @cocktail.destroy
     respond_to do |format|
-      format.html { redirect_to cocktails_url, notice: 'Cocktail was successfully deleted.' }
+      format.html { redirect_to root_url, notice: 'Cocktail was successfully deleted.' }
       format.json { head :no_content }
     end
   end
