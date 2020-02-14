@@ -14,7 +14,8 @@
     <% end %>
 
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @url_cocktail.sample %>')">
+      <!-- & is a shortcut to allow continuation of code even if not working (i.e. no image available) - alternative to if with true statement -->
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cocktail.images.first&.url %>')">
         <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
         <div>
           <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: 'Are you sure you want to delete this cocktail?' }, class: 'card-remove-link' do %>
@@ -25,3 +26,4 @@
     <% end %>
   </div>
 </div>
+
